@@ -255,6 +255,7 @@ def number_of_stutters(s):
             counter = counter + 1
     return counter
 
+
 def run_test_is_palindrome():
     """ Tests the   is_palindrome   function. """
     print()
@@ -323,7 +324,7 @@ def is_palindrome(s):
       :type s: str
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ###########################################################################
@@ -335,15 +336,17 @@ def is_palindrome(s):
     new_word = []
     for k in range(len(s)):
         new_word = new_word + [s[len(s)-(k+1)]]
-    if new_word == s:
-        return True
-    print(new_word)
-    return False
+    for j in range(len(s)):
+        if new_word[j] != s[j]:
+            return False
+    return True
 
 # -----------------------------------------------------------------------------
 # Some problems loop (iterate) through two or more sequences
 #    IN PARALLEL, as in the   count_same   problem below.
 # -----------------------------------------------------------------------------
+
+
 def run_test_count_same():
     """ Tests the   count_same   function. """
     print()
@@ -396,9 +399,14 @@ def count_same(sequence1, sequence2):
       type: sequence2: tuple or list or string
     """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # Done: 6. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
+    counter = 0
+    for k in range(len(sequence1)):
+        if sequence1[k] == sequence2[k]:
+            counter = counter + 1
+    return counter
 
 
 # -----------------------------------------------------------------------------
